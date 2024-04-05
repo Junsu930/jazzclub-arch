@@ -1,35 +1,36 @@
-import { Button, Nav, NavItem } from 'reactstrap';
+import { Button, Nav } from 'reactstrap';
 import Logo from './Logo';
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import SidebarMenu from './SidebarMenu';
 
 const navigation = [
   {
     title: '수도권',
-    href: '/starter',
-    icon: 'bi bi-speedometer2',
+    href: '/metropolitan',
+    icon: 'bi bi-globe-americas',
   },
   {
     title: '광역시/특별시',
-    href: '/alerts',
-    icon: 'bi bi-bell',
+    href: '/specialCity',
+    icon: 'bi bi-globe-americas',
   },
   {
     title: '지방',
-    href: '/badges',
-    icon: 'bi bi-patch-check',
+    href: '/rural',
+    icon: 'bi bi-globe-americas',
   },
 ];
 
 const navigation2 = [
   {
     title: '자유게시판',
-    href: '/cards',
-    icon: 'bi bi-speedometer2',
+    href: '/freeboard',
+    icon: 'bi bi-clipboard-fill',
   },
   {
     title: '의견 제출',
-    href: '/grid',
-    icon: 'bi bi-bell',
+    href: '/ask',
+    icon: 'bi bi-clipboard-fill',
   },
 ];
 
@@ -54,38 +55,20 @@ const Sidebar = () => {
       </div>
       <div className="pt-4 mt-2">
         <Nav vertical className="sidebarNav">
-          {location.pathname === '/jazzClubSchedule' &&
-            navigation.map((navi, index) => (
-              <NavItem key={index} className="sidenav-bg">
-                <Link
-                  to={navi.href}
-                  className={
-                    location.pathname === navi.href
-                      ? 'text-primary nav-link py-3'
-                      : 'nav-link text-secondary py-3'
-                  }
-                >
-                  <i className={navi.icon}></i>
-                  <span className="ms-3 d-inline-block">{navi.title}</span>
-                </Link>
-              </NavItem>
-            ))}
-          {location.pathname === '/about' &&
-            navigation2.map((navi, index) => (
-              <NavItem key={index} className="sidenav-bg">
-                <Link
-                  to={navi.href}
-                  className={
-                    location.pathname === navi.href
-                      ? 'text-primary nav-link py-3'
-                      : 'nav-link text-secondary py-3'
-                  }
-                >
-                  <i className={navi.icon}></i>
-                  <span className="ms-3 d-inline-block">{navi.title}</span>
-                </Link>
-              </NavItem>
-            ))}
+          {(location.pathname === '/jazzClubSchedule' ||
+            navigation.some((x) => x.href === location.pathname)) && (
+            <SidebarMenu naviArr={navigation} parentMenu="JazzClubSchedule" />
+          )}
+          {(location.pathname === '/board' ||
+            navigation2.some((x) => x.href === location.pathname)) && (
+            <SidebarMenu naviArr={navigation2} parentMenu="Board" />
+          )}
+          {location.pathname === '/starter' && (
+            <>
+              <SidebarMenu naviArr={navigation} parentMenu="JazzClubSchedule" />
+              <SidebarMenu naviArr={navigation2} parentMenu="Board" />
+            </>
+          )}
         </Nav>
       </div>
     </div>

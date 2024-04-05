@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import {
   Navbar,
@@ -12,12 +12,14 @@ import {
   Dropdown,
   Button,
 } from 'reactstrap';
-import { ReactComponent as LogoWhite } from '../assets/images/logos/amplelogowhite.svg';
 import user1 from '../assets/images/users/user1.jpg';
+import notLogged from '../assets/images/users/notLogged.png';
+import Logo from './Logo';
 
 const Header = () => {
   const [isOpen, setIsOpen] = React.useState(false);
   const [dropdownOpen, setDropdownOpen] = React.useState(false);
+  const [isLoggedIn, setIsLoggedIn] = React.useState(false);
 
   const toggle = () => setDropdownOpen((prevState) => !prevState);
   const Handletoggle = () => {
@@ -26,11 +28,18 @@ const Header = () => {
   const showMobilemenu = () => {
     document.getElementById('sidebarArea').classList.toggle('showSidebar');
   };
+
+  useEffect(() => {
+    const storedUserLoggedInfo = localStorage.getItem('isLoggedIn');
+    if (storedUserLoggedInfo) {
+      setIsLoggedIn(true);
+    }
+  }, []);
   return (
     <Navbar color="dark" dark expand="md">
       <div className="d-flex align-items-center">
         <NavbarBrand href="/" className="d-lg-none">
-          <LogoWhite />
+          <Logo type="min" />
         </NavbarBrand>
         <Button
           color="dark"
@@ -63,30 +72,45 @@ const Header = () => {
             </Link>
           </NavItem>
           <NavItem>
-            <Link to="/about" className="nav-link">
+            <Link to="/board" className="nav-link">
               Board
             </Link>
           </NavItem>
         </Nav>
-        <Dropdown isOpen={dropdownOpen} toggle={toggle}>
-          <DropdownToggle color="dark">
-            <img
-              src={user1}
-              alt="profile"
-              className="rounded-circle"
-              width="30"
-            ></img>
-          </DropdownToggle>
-          <DropdownMenu>
-            <DropdownItem header>Info</DropdownItem>
-            <DropdownItem>My Account</DropdownItem>
-            <DropdownItem>Edit Profile</DropdownItem>
-            <DropdownItem divider />
-            <DropdownItem>My Balance</DropdownItem>
-            <DropdownItem>Inbox</DropdownItem>
-            <DropdownItem>Logout</DropdownItem>
-          </DropdownMenu>
-        </Dropdown>
+        {isLoggedIn && (
+          <Dropdown isOpen={dropdownOpen} toggle={toggle}>
+            <DropdownToggle color="dark">
+              <img
+                src={user1}
+                alt="profile"
+                className="rounded-circle"
+                width="30"
+              ></img>
+            </DropdownToggle>
+            <DropdownMenu>
+              <DropdownItem>닉네임 변경</DropdownItem>
+              <DropdownItem>작성 글 확인</DropdownItem>
+              <DropdownItem>로그아웃</DropdownItem>
+            </DropdownMenu>
+          </Dropdown>
+        )}
+        {!isLoggedIn && (
+          <Dropdown isOpen={dropdownOpen} toggle={toggle}>
+            <DropdownToggle color="dark">
+              <img
+                src={notLogged}
+                alt="not logged in"
+                className="rounded-circle"
+                width="30"
+              ></img>
+            </DropdownToggle>
+            <DropdownMenu>
+              <Link to="/naverLogin" style={{ textDecoration: 'none' }}>
+                <DropdownItem>네이버 로그인</DropdownItem>
+              </Link>
+            </DropdownMenu>
+          </Dropdown>
+        )}
       </Collapse>
     </Navbar>
   );

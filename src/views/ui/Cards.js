@@ -68,7 +68,7 @@ const Cards = (state) => {
     if (e.target.value === 'all') {
       setBlogData(clubData);
     } else {
-      const filteredData = BlogData.filter(
+      const filteredData = clubData.filter(
         (club) => club.detlRegion === e.target.value,
       );
       setBlogData(filteredData);
@@ -76,11 +76,8 @@ const Cards = (state) => {
   };
 
   const searchInputHandler = (e) => {
-    const filteredData = BlogData.filter((club) =>
-      Object.values(club.detlAddr)
-        .join('')
-        .toLowerCase()
-        .includes(e.target.value),
+    const filteredData = clubData.filter((club) =>
+      club.title.toLowerCase().includes(e.target.value.toLowerCase()),
     );
     setBlogData(filteredData);
   };

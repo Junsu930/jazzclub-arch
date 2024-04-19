@@ -1,6 +1,18 @@
-import { Card, CardText, CardTitle, Button, Row, Col } from 'reactstrap';
+import {
+  Card,
+  CardText,
+  CardTitle,
+  Button,
+  Row,
+  Col,
+  Modal,
+  ModalHeader,
+  ModalBody,
+  ModalFooter,
+} from 'reactstrap';
 import classes from './Cards.module.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import Calendar from './Calendar';
 
 const clubData = [
   {
@@ -63,27 +75,54 @@ const clubData = [
 
 const Cards = (state) => {
   const [BlogData, setBlogData] = useState(clubData);
+  const [selectedRegion, setSelectedRegion] = useState('all');
+  const [searchTerm, setSearchTerm] = useState('');
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggle = () => setIsOpen(!isOpen);
+
+  useEffect(() => {
+    let filteredData = clubData;
+
+    if (selectedRegion !== 'all') {
+      filteredData = filteredData.filter(
+        (club) => club.detlRegion === selectedRegion,
+      );
+    }
+
+    if (searchTerm) {
+      filteredData = filteredData.filter((club) =>
+        club.title.toLowerCase().includes(searchTerm.toLowerCase()),
+      );
+    }
+    setBlogData(filteredData);
+  }, [selectedRegion, searchTerm]);
 
   const regionSearchHandler = (e) => {
-    if (e.target.value === 'all') {
-      setBlogData(clubData);
-    } else {
-      const filteredData = clubData.filter(
-        (club) => club.detlRegion === e.target.value,
-      );
-      setBlogData(filteredData);
-    }
+    setSelectedRegion(e.target.value);
   };
 
   const searchInputHandler = (e) => {
-    const filteredData = clubData.filter((club) =>
-      club.title.toLowerCase().includes(e.target.value.toLowerCase()),
-    );
-    setBlogData(filteredData);
+    setSearchTerm(e.target.value);
   };
 
   return (
     <div>
+      <Modal isOpen={isOpen} toggle={toggle} fullscreen>
+        <ModalHeader toggle={toggle}>공연 일정</ModalHeader>
+        <ModalBody style={{ display: 'flex' }}>
+          <div style={{ flexBasis: '70%' }}>
+            <Calendar />
+          </div>
+          <div style={{ flexBasis: '30%' }}></div>
+        </ModalBody>
+        <ModalFooter>
+          <Button color="secondary" onClick={toggle}>
+            Cancel
+          </Button>
+        </ModalFooter>
+      </Modal>
+
       <Row>
         <Col>
           <div className={classes.titleBar}>
@@ -133,11 +172,13 @@ const Cards = (state) => {
         {BlogData.map((eachClub, index) => {
           return (
             <Col key={index} md="6" lg="4">
-              <Card body>
+              <Card body style={{ height: '10rem' }}>
                 <CardTitle tag="h5">{eachClub.title}</CardTitle>
                 <CardText>{eachClub.detlAddr}</CardText>
                 <div>
-                  <Button color="dark">공연 정보</Button>
+                  <Button color="dark" onClick={toggle}>
+                    공연 정보
+                  </Button>
                 </div>
               </Card>
             </Col>

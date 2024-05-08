@@ -1,16 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import interactionPlugin from '@fullcalendar/interaction';
-export default function Calendar() {
+import classes from './Calendar.module.css';
+export default function Calendar(props) {
+  const [dateInfo, setDateInfo] = useState();
+
   const handleDateClick = (e) => {
-    console.log(e);
+    setDateInfo(e);
   };
 
   return (
-    <FullCalendar
-      plugins={[dayGridPlugin, interactionPlugin]}
-      dateClick={handleDateClick}
-    />
+    <div className={classes.mainDiv}>
+      <div>
+        <FullCalendar
+          plugins={[dayGridPlugin, interactionPlugin]}
+          dateClick={handleDateClick}
+        />
+      </div>
+      <div className={classes.dateInfo}>
+        <p>{dateInfo && dateInfo.dateStr}</p>
+        <img src="" />
+      </div>
+    </div>
   );
 }

@@ -8,9 +8,9 @@ const FullLayout = lazy(() => import('../layouts/FullLayout.js'));
 
 const Starter = lazy(() => import('../views/Starter.js'));
 const Forms = lazy(() => import('../views/ui/Forms.js'));
-const Alerts = lazy(() => import('../views/ui/Alerts'));
-const Badges = lazy(() => import('../views/ui/Badges'));
-const Cards = lazy(() => import('../views/ui/Cards'));
+const Alerts = lazy(() => import('../components/Alerts.js'));
+const Badges = lazy(() => import('../components/Badges.js'));
+const Cards = lazy(() => import('../components/Cards.js'));
 const Grid = lazy(() => import('../views/ui/Grid'));
 const NaverLoginPage = lazy(() => import('../views/ui/NaverLogin.js'));
 

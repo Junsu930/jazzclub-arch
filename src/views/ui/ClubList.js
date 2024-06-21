@@ -10,12 +10,13 @@ import {
   ModalBody,
   ModalFooter,
 } from 'reactstrap';
-import classes from './Cards.module.css';
+import classes from './ClubList.module.css';
 import { useEffect, useState } from 'react';
-import Calendar from './Calendar';
+import Calendar from '../../components/Calendar';
 import axios from 'axios';
+import Comment from '../../components/Comment';
 
-const Cards = (state) => {
+const ClubList = (state) => {
   const [metroData, setMetroData] = useState([]);
   const [spCityData, setSpCityData] = useState([]);
   const [ruralData, setRuralData] = useState([]);
@@ -47,8 +48,8 @@ const Cards = (state) => {
 
         switch (state.region) {
           case 'metro':
-            setClubData(metroData);
-            setRegionOptions(metroCode);
+            setClubData(data.metro);
+            setRegionOptions(data.metroCode);
             break;
           case 'spCity':
             setClubData(data.spCity);
@@ -99,11 +100,9 @@ const Cards = (state) => {
 
   return (
     <div>
-      <Modal isOpen={isOpen} toggle={toggle} fullscreen>
-        <ModalHeader toggle={toggle}>공연 일정</ModalHeader>
-        <ModalBody>
-          <Calendar />
-        </ModalBody>
+      <Modal isOpen={isOpen} toggle={toggle} size="md">
+        <ModalHeader toggle={toggle}>상세정보</ModalHeader>
+        <ModalBody>상세정보예정</ModalBody>
         <ModalFooter>
           <Button color="secondary" onClick={toggle}>
             Cancel
@@ -147,7 +146,7 @@ const Cards = (state) => {
                   <CardText>{eachClub.detlAddr}</CardText>
                   <div>
                     <Button color="dark" onClick={toggle}>
-                      공연 정보
+                      상세 정보
                     </Button>
                   </div>
                 </Card>
@@ -159,4 +158,4 @@ const Cards = (state) => {
   );
 };
 
-export default Cards;
+export default ClubList;

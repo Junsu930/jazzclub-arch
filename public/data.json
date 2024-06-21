@@ -1,6 +1,7 @@
 {
   "metro": [
     {
+      "clubCode": "m01",
       "title": "천년동안도 종각",
       "mainRegion": "서울",
       "subRegion": "강북",
@@ -9,6 +10,7 @@
       "note": "종각역 4번 출구에서 424m"
     },
     {
+      "clubCode": "m02",
       "title": "천년동안도 낙원",
       "mainRegion": "서울",
       "subRegion": "강북",
@@ -17,6 +19,7 @@
       "note": "종로3가역 5번 출구에서 90m"
     },
     {
+      "clubCode": "m03",
       "title": "하우스오브블루",
       "mainRegion": "서울",
       "subRegion": "강북",
@@ -25,6 +28,7 @@
       "note": "경복궁역 2번 출구에서 398m"
     },
     {
+      "clubCode": "m04",
       "title": "서울 게러지바",
       "mainRegion": "서울",
       "subRegion": "강북",
@@ -33,6 +37,7 @@
       "note": "종각역 4번 출구에서 281m"
     },
     {
+      "clubCode": "m05",
       "title": "종로 리브로",
       "mainRegion": "서울",
       "subRegion": "강북",
@@ -41,6 +46,7 @@
       "note": "을지로3가역 9번 출구에서 302m"
     },
     {
+      "clubCode": "m06",
       "title": "이들스",
       "mainRegion": "서울",
       "subRegion": "강북",
@@ -49,6 +55,7 @@
       "note": "종로3가역 5번 출구에서 54m"
     },
     {
+      "clubCode": "m07",
       "title": "연남 5701",
       "mainRegion": "서울",
       "subRegion": "강북",
@@ -59,6 +66,7 @@
   ],
   "spCity": [
     {
+      "clubCode": "s01",
       "title": "테스트 광역시",
       "mainRegion": "인천광역시",
       "subRegion": "인천",
@@ -69,6 +77,7 @@
   ],
   "rural": [
     {
+      "clubCode": "r01",
       "title": "강원도 테스트",
       "mainRegion": "강원도",
       "subRegion": "강북",
@@ -78,6 +87,10 @@
     }
   ],
   "metroCode": [
+    {
+      "code": "all",
+      "codeNm": "전체"
+    },
     {
       "code": "dobong",
       "codeNm": "도봉구"
@@ -193,6 +206,29 @@
     {
       "code": "sigol",
       "codeNm": "시골구"
+    }
+  ],
+  "comment": [
+    {
+      "key": "1",
+      "userid": "web7722",
+      "content": "안뇽하세요2",
+      "date": "2022-04-21",
+      "parentClub": "m01"
+    },
+    {
+      "key": "2",
+      "userid": "web7722",
+      "content": "안뇽하세요3",
+      "date": "2022-04-21",
+      "parentClub": "m01"
+    },
+    {
+      "key": "3",
+      "userid": "web7722",
+      "content": "안뇽하세요4",
+      "date": "2022-04-21",
+      "parentClub": "m02"
     }
   ]
 }

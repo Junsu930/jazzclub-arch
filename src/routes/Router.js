@@ -1,6 +1,7 @@
 import { lazy } from 'react';
 import { Navigate } from 'react-router-dom';
 import Contact from '../components/Contact.js';
+import Freeboard from '../components/Freeboard.js';
 
 /****Layouts*****/
 const FullLayout = lazy(() => import('../layouts/FullLayout.js'));
@@ -35,7 +36,7 @@ const ThemeRoutes = [
       },
       { path: '/rural', exact: true, element: <Clubs region="rural" /> },
       { path: '/board', exact: true, element: <Navigate to="/freeboard" /> },
-      { path: '/freeboard', exact: true, element: <Contact /> },
+      { path: '/freeboard', exact: true, element: <Freeboard /> },
       { path: '/ask', exact: true, element: <Contact /> },
       { path: '/naverLogin', exact: true, element: <NaverLoginPage /> },
     ],

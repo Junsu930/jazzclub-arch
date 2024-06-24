@@ -1,25 +1,48 @@
-import React from 'react';
-import { Form, FormGroup, Label, Input, Button } from 'reactstrap';
+import React, { useRef } from 'react';
+import { FormGroup, Label, Input } from 'reactstrap';
 import classes from './Contact.module.css';
+import emailjs from '@emailjs/browser';
 
-const Contact = () => {
+export const Contact = () => {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        'junsu930',
+        'template_xblgbil',
+        form.current,
+        'VCIg1v0wIG18N1ZTD',
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        },
+      );
+  };
+
   return (
-    <Form>
+    <form ref={form} onSubmit={sendEmail}>
       <FormGroup>
-        <Label for="exampleEmail">이메일</Label>
-        <Input id="exampleEmail" name="email" type="email" />
+        <Label for="email">이메일</Label>
+        <Input id="email" name="user_email" type="email" />
       </FormGroup>
       <FormGroup>
-        <Label for="exampleText">문의사항</Label>
+        <Label for="message">문의사항</Label>
         <Input
-          id="exampleText"
-          name="text"
-          className={classes.contactArea}
+          id="message"
+          name="message"
           type="textarea"
+          className={classes.contactArea}
         />
       </FormGroup>
-      <Button>제출</Button>
-    </Form>
+      <input type="submit" value="제출" />
+    </form>
   );
 };
 

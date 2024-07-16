@@ -230,5 +230,231 @@
       "date": "2022-04-21",
       "parentClub": "m02"
     }
+  ],
+  "boardList": [
+    {
+      "id": 1,
+      "author": "user1",
+      "title": "title1",
+      "content": "This is the content of the first post",
+      "viewCount": 5,
+      "createdAt": "2024-07-15T10:00:00"
+    },
+    {
+      "id": 2,
+      "author": "user2",
+      "title": "title2",
+      "content": "Here is some content for the second post",
+      "viewCount": 10,
+      "createdAt": "2024-07-15T11:00:00"
+    },
+    {
+      "id": 3,
+      "author": "user3",
+      "title": "title3",
+      "content": "Third post content goes here",
+      "viewCount": 3,
+      "createdAt": "2024-07-15T12:00:00"
+    },
+    {
+      "id": 4,
+      "author": "user4",
+      "title": "title4",
+      "content": "Content of the fourth post",
+      "viewCount": 7,
+      "createdAt": "2024-07-15T13:00:00"
+    },
+    {
+      "id": 5,
+      "author": "user5",
+      "title": "title5",
+      "content": "Fifth post's content",
+      "viewCount": 2,
+      "createdAt": "2024-07-15T14:00:00"
+    },
+    {
+      "id": 6,
+      "author": "user6",
+      "title": "title6",
+      "content": "This is the content of the sixth post",
+      "viewCount": 12,
+      "createdAt": "2024-07-15T15:00:00"
+    },
+    {
+      "id": 7,
+      "author": "user7",
+      "title": "title7",
+      "content": "Seventh post content",
+      "viewCount": 1,
+      "createdAt": "2024-07-15T16:00:00"
+    },
+    {
+      "id": 8,
+      "author": "user8",
+      "title": "title8",
+      "content": "Content for the eighth post",
+      "viewCount": 8,
+      "createdAt": "2024-07-15T17:00:00"
+    },
+    {
+      "id": 9,
+      "author": "user9",
+      "title": "title9",
+      "content": "Ninth post's content",
+      "viewCount": 4,
+      "createdAt": "2024-07-15T18:00:00"
+    },
+    {
+      "id": 10,
+      "author": "user10",
+      "title": "title10",
+      "content": "Tenth post content here",
+      "viewCount": 9,
+      "createdAt": "2024-07-15T19:00:00"
+    },
+    {
+      "id": 11,
+      "author": "user11",
+      "title": "title11",
+      "content": "Eleventh post content",
+      "viewCount": 15,
+      "createdAt": "2024-07-15T20:00:00"
+    },
+    {
+      "id": 12,
+      "author": "user12",
+      "title": "title12",
+      "content": "Twelfth post content",
+      "viewCount": 6,
+      "createdAt": "2024-07-15T21:00:00"
+    },
+    {
+      "id": 13,
+      "author": "user13",
+      "title": "title13",
+      "content": "Thirteenth post content",
+      "viewCount": 13,
+      "createdAt": "2024-07-15T22:00:00"
+    },
+    {
+      "id": 14,
+      "author": "user14",
+      "title": "title14",
+      "content": "Fourteenth post content",
+      "viewCount": 7,
+      "createdAt": "2024-07-15T23:00:00"
+    },
+    {
+      "id": 15,
+      "author": "user15",
+      "title": "title15",
+      "content": "Fifteenth post content",
+      "viewCount": 8,
+      "createdAt": "2024-07-16T00:00:00"
+    },
+    {
+      "id": 16,
+      "author": "user16",
+      "title": "title16",
+      "content": "Sixteenth post content",
+      "viewCount": 4,
+      "createdAt": "2024-07-16T01:00:00"
+    },
+    {
+      "id": 17,
+      "author": "user17",
+      "title": "title17",
+      "content": "Seventeenth post content",
+      "viewCount": 5,
+      "createdAt": "2024-07-16T02:00:00"
+    },
+    {
+      "id": 18,
+      "author": "user18",
+      "title": "title18",
+      "content": "Eighteenth post content",
+      "viewCount": 11,
+      "createdAt": "2024-07-16T03:00:00"
+    },
+    {
+      "id": 19,
+      "author": "user19",
+      "title": "title19",
+      "content": "Nineteenth post content",
+      "viewCount": 2,
+      "createdAt": "2024-07-16T04:00:00"
+    },
+    {
+      "id": 20,
+      "author": "user20",
+      "title": "title20",
+      "content": "Twentieth post content",
+      "viewCount": 9,
+      "createdAt": "2024-07-16T05:00:00"
+    },
+    {
+      "id": 21,
+      "author": "user21",
+      "title": "title21",
+      "content": "Twenty-first post content",
+      "viewCount": 3,
+      "createdAt": "2024-07-16T06:00:00"
+    },
+    {
+      "id": 22,
+      "author": "user22",
+      "title": "title22",
+      "content": "Twenty-second post content",
+      "viewCount": 4,
+      "createdAt": "2024-07-16T07:00:00"
+    },
+    {
+      "id": 23,
+      "author": "user23",
+      "title": "title23",
+      "content": "Twenty-third post content",
+      "viewCount": 6,
+      "createdAt": "2024-07-16T08:00:00"
+    },
+    {
+      "id": 24,
+      "author": "user24",
+      "title": "title24",
+      "content": "Twenty-fourth post content",
+      "viewCount": 2,
+      "createdAt": "2024-07-16T09:00:00"
+    },
+    {
+      "id": 25,
+      "author": "user25",
+      "title": "title25",
+      "content": "Twenty-fifth post content",
+      "viewCount": 7,
+      "createdAt": "2024-07-16T10:00:00"
+    },
+    {
+      "id": 26,
+      "author": "user26",
+      "title": "title26",
+      "content": "Twenty-sixth post content",
+      "viewCount": 5,
+      "createdAt": "2024-07-16T11:00:00"
+    },
+    {
+      "id": 27,
+      "author": "user27",
+      "title": "title27",
+      "content": "Twenty-seventh post content",
+      "viewCount": 10,
+      "createdAt": "2024-07-16T12:00:00"
+    },
+    {
+      "id": 28,
+      "author": "user28",
+      "title": "title28",
+      "content": "Twenty-eighth post content",
+      "viewCount": 6,
+      "createdAt": "2024-07-16T13:00:00"
+    }
   ]
 }

@@ -14,7 +14,7 @@ import classes from './ClubList.module.css';
 import { useEffect, useState } from 'react';
 import Calendar from '../../components/Calendar';
 import axios from 'axios';
-import Comment from '../../components/Comment';
+import Comment from './Comment';
 
 const ClubList = (state) => {
   const [metroData, setMetroData] = useState([]);

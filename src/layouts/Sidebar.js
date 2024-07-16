@@ -60,6 +60,7 @@ const Sidebar = () => {
             <SidebarMenu naviArr={navigation} parentMenu="JazzClubSchedule" />
           )}
           {(location.pathname === '/board' ||
+            location.pathname.includes('/post') ||
             navigation2.some((x) => x.href === location.pathname)) && (
             <SidebarMenu naviArr={navigation2} parentMenu="Board" />
           )}

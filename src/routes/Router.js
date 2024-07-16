@@ -1,7 +1,5 @@
 import { lazy } from 'react';
 import { Navigate } from 'react-router-dom';
-import Contact from '../components/Contact.js';
-import Freeboard from '../components/Freeboard.js';
 
 /****Layouts*****/
 const FullLayout = lazy(() => import('../layouts/FullLayout.js'));
@@ -9,10 +7,11 @@ const FullLayout = lazy(() => import('../layouts/FullLayout.js'));
 /***** Pages ****/
 
 const Starter = lazy(() => import('../views/Starter.js'));
-const Alerts = lazy(() => import('../components/Contact.js'));
 const Clubs = lazy(() => import('../views/ui/ClubList.js'));
-const Grid = lazy(() => import('../views/ui/Grid'));
 const NaverLoginPage = lazy(() => import('../views/ui/NaverLogin.js'));
+const Contact = lazy(() => import('../views/ui/Contact.js'));
+const Freeboard = lazy(() => import('../views/ui/Freeboard.js'));
+const BoardDetail = lazy(() => import('../views/ui/BoardDetail.js'));
 
 /*****Routes******/
 
@@ -39,6 +38,7 @@ const ThemeRoutes = [
       { path: '/freeboard', exact: true, element: <Freeboard /> },
       { path: '/ask', exact: true, element: <Contact /> },
       { path: '/naverLogin', exact: true, element: <NaverLoginPage /> },
+      { path: '/post/:id', exact: true, element: <BoardDetail /> },
     ],
   },
 ];

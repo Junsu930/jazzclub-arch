@@ -105,8 +105,8 @@ const Header = () => {
               ></img>
             </DropdownToggle>
             <DropdownMenu>
-              <Link to="/naverLogin" style={{ textDecoration: 'none' }}>
-                <DropdownItem>네이버 로그인</DropdownItem>
+              <Link to="/login" style={{ textDecoration: 'none' }}>
+                <DropdownItem>로그인</DropdownItem>
               </Link>
             </DropdownMenu>
           </Dropdown>
